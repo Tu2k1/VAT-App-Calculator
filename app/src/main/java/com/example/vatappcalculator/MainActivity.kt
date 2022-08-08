@@ -36,16 +36,8 @@ class MainActivity : AppCompatActivity() {
         if(binding.roundUpSwitch.isChecked){
             total = kotlin.math.ceil(total)
         }
-        formatting(totalCost, vat, total)
-    }
 
-    private fun formatting(totalCost: Double, vat: Double, total: Double) {
-        val formattedCost = NumberFormat.getCurrencyInstance().format(totalCost)
-        val formattedVat = NumberFormat.getCurrencyInstance().format(vat)
         val formattedTotal = NumberFormat.getCurrencyInstance().format(total)
-
-        binding.finalCost.text = getString(R.string.cost, formattedCost)
-        binding.finalVat.text = getString(R.string.vat, formattedVat)
         binding.finalTotal.text = getString(R.string.total_amount, formattedTotal)
     }
 }
